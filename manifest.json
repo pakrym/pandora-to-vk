@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "Pandora to VK",
+  "description": "This extension allows to simpy add songs from Pandora.com to VK.com",
+  "version": "1.0",
+
+  "permissions": [
+    "http://*/*",
+    "tabs"
+  ],
+  
+  "page_action": {
+    "default_icon": "icon_64x64.png",
+    "default_title": "Search in VK"
+  },
+  "background": { "scripts": ["background.js"] }
+}
