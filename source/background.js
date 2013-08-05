@@ -8,16 +8,12 @@ function checkForValidUrl(tabId, changeInfo, tab)
 
 function search(tab)
 {
-    chrome.tabs.executeScript(tab.id, {file :"jquery-2.0.3.min.js" }, 
-    	    function(results){
-                 chrome.tabs.executeScript(tab.id, {file :"geturl.js" }, 
-		    	    function(results){
-        	        	chrome.tabs.create({
-        					url: results[0]
-					    });
-            		});
-            });
-	
+
+  chrome.tabs.executeScript(tab.id, {file :"geturl.js" }, 
+	    function(results){
+ 	        	chrome.tabs.create({url: results[0]});
+      });
+
 };
 
 chrome.tabs.onUpdated.addListener(checkForValidUrl); 
